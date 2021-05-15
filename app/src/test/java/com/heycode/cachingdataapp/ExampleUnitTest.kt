@@ -1,5 +1,4 @@
 package com.heycode.cachingdataapp
-
 import org.junit.Test
 
 import org.junit.Assert.*
