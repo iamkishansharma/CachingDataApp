@@ -37,7 +37,7 @@
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-30dp"
+            android:layout_marginTop="-35dp"
             android:gravity="center"
             android:singleLine="true"
             android:text="Name"
@@ -45,37 +45,29 @@
             android:textStyle="bold" />
 
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/text_address"
+            style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:singleLine="true"
+            android:text="Address"
+            android:textColor="@color/white" />
 
-            <TextView
-                android:id="@+id/text_address"
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Address"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/text_type"
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Type"
-                android:textColor="@color/white" />
-        </LinearLayout>
-
+        <TextView
+            android:id="@+id/text_type"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/text_description"
             style="@style/TextAppearance.AppCompat.Small"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="2"
             android:text="Description"
             android:textColor="@color/white" />
     </LinearLayout>
