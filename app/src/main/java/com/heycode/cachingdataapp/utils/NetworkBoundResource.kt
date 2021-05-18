@@ -2,11 +2,11 @@ package com.heycode.cachingdataapp.utils
 
 import kotlinx.coroutines.flow.*
 
-fun <ResultType, RequestType> networkBoundResource(
-    query: () -> Flow<ResultType>,
-    fetch: suspend () -> RequestType,
-    saveFetchResult: suspend (RequestType) -> Unit,
-    shouldFetch: (ResultType) -> Boolean = { true }
+inline fun <ResultType, RequestType> networkBoundResource(
+    crossinline query: () -> Flow<ResultType>,
+    crossinline fetch: suspend () -> RequestType,
+    crossinline saveFetchResult: suspend (RequestType) -> Unit,
+    crossinline shouldFetch: (ResultType) -> Boolean = { true }
 ) = flow {
     val data = query().first()
 
@@ -20,6 +20,7 @@ fun <ResultType, RequestType> networkBoundResource(
         } catch (throwable: Throwable) {
             query().map { Resource.Error(throwable, it) }
         }
+
     } else {
         query().map { Resource.Success(it) }
     }
